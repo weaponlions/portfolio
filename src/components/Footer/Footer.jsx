@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Button } from '@mui/material'
 import mail from '../../assets/mail.svg'
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/brand.svg'
 import github from '../../assets/github.svg'
 import instagram from '../../assets/instagram.svg'
 import telegram from '../../assets/telegram.svg'
