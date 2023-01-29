@@ -3,6 +3,7 @@ import { Box } from '@mui/material'
 import './NavbarStyle.css'
 import logo from '../../assets/logo.svg'
 import { Link } from 'react-router-dom'
+import resume from '../../assets/resume.pdf'
 
 export const Navbar = () => {
     const [openNav, setOpenNav] = useState(false)
@@ -59,7 +60,7 @@ export const Navbar = () => {
             <a className='navLink'  href="mailto:harshsaini8285@gmail.com">CONTACT </a>
           </Box>
           <Box variant='contained' sx={btnHover} className={'navFocus'} >
-            <a className='navLink' target={'_blank'} onClick={()=> setOpenNav(false)}  href="https://drive.google.com/file/d/1Q3ud8GuGs7xSsnaFGeSaw5DoVt_vEtPa/view">Get Resume</a>
+            <a className='navLink' target={'_blank'} onClick={()=> setOpenNav(false)} href={resume}>Get Resume</a>
           </Box> 
         </Box>
     </>

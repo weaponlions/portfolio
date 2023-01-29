@@ -7,6 +7,7 @@ import instagram from '../../assets/instagram.svg'
 import telegram from '../../assets/telegram.svg'
 import whatsapp from '../../assets/whatsapp.svg'
 import linkedin from '../../assets/linkedin.svg'
+import resume from '../../assets/resume.pdf'
 
 export const Footer = () => {
     const st2 = {
@@ -72,7 +73,7 @@ export const Footer = () => {
                         </div>
                     </form>
                 <Button variant='contained' style={{ borderRadius: 35, backgroundColor: "white", padding: "18px 46px", fontSize: "18px", color: 'black', margin: '0.5rem' }}>
-                    <a style={{textDecoration: 'none', color: 'black', marginLeft: '0.5rem'}} target={'_blank'} href="https://drive.google.com/file/d/1Q3ud8GuGs7xSsnaFGeSaw5DoVt_vEtPa/view">Get Resume</a>
+                    <a style={{textDecoration: 'none', color: 'black', marginLeft: '0.5rem'}} target={'_blank'} href={resume}>Get Resume</a>
                 </Button>
                 </Box>
             </Box>
