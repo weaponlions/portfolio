@@ -1,10 +1,23 @@
-import React from 'react'
+import React,{useLayoutEffect} from 'react'
 import { Box, Button } from '@mui/material'
 import { Footer } from '../Footer/Footer'
-import { ProjectCard } from './ProjectCard'
-import { Link } from 'react-router-dom'
+import { ProjectCard } from './ProjectCard' 
+import project1 from '../../assets/project1.png'
+import project3 from '../../assets/project3.png'
 
 export const Projects = () => {
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
+    const st = (theme)=>({
+        marginY: '1rem', 
+        width: '350px',
+        [theme.breakpoints.up(400)]: {
+            marginX: '1rem',
+            width: '450px',
+            overflow: 'hidden', 
+        },
+    })
   return (
     <>
         <Box component={'div'} maxWidth={'xl'}>
@@ -29,55 +42,26 @@ export const Projects = () => {
                         flexDirection: 'column',
                         [theme.breakpoints.up(400)]: { 
                         flexDirection: 'row',
-                        justifyContent: 'space-between',
+                        justifyContent: 'space-evenly',
+                        flexWrap: 'wrap'
                         }
                     })}>
-                        <Box component={'div'} maxWidth={'xl'} sx={(theme)=>({
-                        marginY: '1rem', 
-                        width: '350px',
-                        [theme.breakpoints.up(400)]: {
-                            width: '480px',
-                            overflow: 'hidden',
-                        }
-                    })}>
-                        <ProjectCard /> 
+                    <Box component={'div'} maxWidth={'xl'} sx={st}>
+                        <ProjectCard img={""} link={"https://github.com/weaponlions/social-memories.git"} title={"Social Memories"} category={"Frontend"} /> 
                     </Box> 
-                    <Box component={'div'} maxWidth={'xl'} sx={(theme)=>({
-                        marginY: '1rem', 
-                        width: '350px',
-                        [theme.breakpoints.up(400)]: {
-                            width: '480px',
-                            overflow: 'hidden'
-                        }
-                    })}>
-                        <ProjectCard /> 
+                    <Box component={'div'} maxWidth={'xl'} sx={st}>
+                        <ProjectCard img={project3} link={"https://github.com/weaponlions/social-memories-backend.git"} title={"Social Memories"} category={"Backend"} /> 
                     </Box> 
-                    <Box component={'div'} maxWidth={'xl'} sx={(theme)=>({
-                        marginY: '1rem', 
-                        width: '350px',
-                        [theme.breakpoints.up(400)]: {
-                            width: '480px',
-                            overflow: 'hidden',
-                        }
-                    })}>
-                        <ProjectCard /> 
+                    <Box component={'div'} maxWidth={'xl'} sx={st}>
+                        <ProjectCard img={""} link={"https://github.com/weaponlions/React-Todo-App.git"} title={"React Todo App"} category={"Frontend"} /> 
                     </Box> 
-                </Box>
-                <Button variant='contained' sx={(theme)=>({ 
-                    borderRadius: 35, 
-                    backgroundColor: "white", 
-                    fontSize: "18px", 
-                    color: 'black', 
-                    margin: '0.5rem', 
-                    padding: '1rem',
-                    [theme.breakpoints.up(400)]: {
-                        display: 'flex',
-                        justifyContent: 'center',
-                        marginX: 'auto', 
-                    }
-                    })}>
-                    <Link to={'/projects'} style={{textDecoration: 'none', color: 'black', marginLeft: '0.5rem', borderBottom: '2px solid black', lineHeight: 1}} >View More</Link>
-                </Button>
+                    <Box component={'div'} maxWidth={'xl'} sx={st}>
+                        <ProjectCard img={""} link={"https://github.com/weaponlions/Django-Todo-Backend.git"} title={"React Todo App"} category={"Backend"} /> 
+                    </Box> 
+                    <Box component={'div'} maxWidth={'xl'} sx={st}>
+                        <ProjectCard img={project3} link={"https://github.com/weaponlions/newsfetch.git"} title={"News Fetcher"} category={"News Api"} /> 
+                    </Box>  
+                </Box> 
             </Box>
 
           <Footer />

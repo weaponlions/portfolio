@@ -6,15 +6,26 @@ import { ProjectCard } from '../Projects/ProjectCard'
 import { Link } from 'react-router-dom'
 import OBJECTS from '../../assets/OBJECTS.svg'
 import mern from '../../assets/mern.png'
+import project1 from '../../assets/project1.png'
+import project3 from '../../assets/project3.png'
 
 export const Home = () => {
+    const st = (theme)=>({
+        marginY: '1rem', 
+        width: '350px',
+        [theme.breakpoints.up(400)]: {
+            marginX: '1rem',
+            width: '450px',
+            overflow: 'hidden',
+        },
+    })
   return (
     <>
         <Box maxWidth={'xl'} component={'div'} sx={{marginTop: '5rem'}}>
             <Box component={'div'} sx={(theme)=>({
                 display: 'flex',
                 justifyContent: 'space-around',
-                flexDirection: 'column',
+                flexDirection: 'column-reverse',
                 [theme.breakpoints.up(400)] : {
                     flexDirection: 'row'
                 }
@@ -26,7 +37,7 @@ export const Home = () => {
                     lineHeight: '1.9rem', 
                     letterSpacing: '1px', 
                     [theme.breakpoints.up(400)]: {
-                            fontSize: '2.5rem',
+                            fontSize: '2rem',
                             lineHeight: '3rem',
                         }
                     })}>
@@ -125,40 +136,17 @@ export const Home = () => {
                         flexDirection: 'column',
                         [theme.breakpoints.up(400)]: { 
                         flexDirection: 'row',
-                        justifyContent: 'space-between',
+                        justifyContent: 'space-evenly',
                         }
                     })}>
-                        <Box component={'div'} maxWidth={'xl'} sx={(theme)=>({
-                        marginY: '1rem', 
-                        width: '350px',
-                        [theme.breakpoints.up(400)]: {
-                            width: '480px',
-                            overflow: 'hidden',
-                            marginY: '5rem'
-                        }
-                    })}>
-                        <ProjectCard /> 
+                        <Box component={'div'} maxWidth={'xl'} sx={st} style={{marginTop: '10rem', marginBottom: '10rem'}} >
+                        <ProjectCard img={""} link={"https://github.com/weaponlions/social-memories.git"} title={"Social Memories"} category={"Social Media"} /> 
                     </Box> 
-                    <Box component={'div'} maxWidth={'xl'} sx={(theme)=>({
-                        marginY: '1rem', 
-                        width: '350px',
-                        [theme.breakpoints.up(400)]: {
-                            width: '480px',
-                            overflow: 'hidden'
-                        }
-                    })}>
-                        <ProjectCard /> 
+                    <Box component={'div'} maxWidth={'xl'} sx={st}>
+                        <ProjectCard img={""} link={"https://github.com/weaponlions/React-Todo-App.git"} title={"React Todo App"} category={"Notes"} /> 
                     </Box> 
-                    <Box component={'div'} maxWidth={'xl'} sx={(theme)=>({
-                        marginY: '1rem', 
-                        width: '350px',
-                        [theme.breakpoints.up(400)]: {
-                            width: '480px',
-                            overflow: 'hidden',
-                            marginY: '10rem'
-                        }
-                    })}>
-                        <ProjectCard /> 
+                    <Box component={'div'} maxWidth={'xl'} sx={st} style={{marginTop: '15rem', marginBottom: '15rem'}}>
+                        <ProjectCard img={project3} link={"https://github.com/weaponlions/newsfetch.git"} title={"News Fetcher"} category={"News Api"} /> 
                     </Box> 
                 </Box>
                 <Button variant='contained' sx={(theme)=>({ 
@@ -175,7 +163,7 @@ export const Home = () => {
                         marginTop: '-15rem'
                     }
                     })}>
-                    <Link to={'/projects'} style={{textDecoration: 'none', color: 'black', marginLeft: '0.5rem', borderBottom: '2px solid black', lineHeight: 1}} >View More</Link>
+                    <Link to={'/project'} style={{textDecoration: 'none', color: 'black', marginLeft: '0.5rem', borderBottom: '2px solid black', lineHeight: 1}} >View More</Link>
                 </Button>
             </Box>
 

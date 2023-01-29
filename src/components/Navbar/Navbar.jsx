@@ -9,7 +9,7 @@ export const Navbar = () => {
     const [openNav, setOpenNav] = useState(false)
     const btnHover = (theme)=>({ 
        [theme.breakpoints.up('lg')]: {
-        fontSize: '25px',
+        fontSize: '22px',
         margin: '1rem 1rem', 
       },
       [theme.breakpoints.up('md')]: {
@@ -89,7 +89,7 @@ export const Navbar = () => {
             <Link to={'/'} className='navLink' onClick={()=> setOpenNav(false)} >HOME</Link>
           </Box>
           <Box variant='contained' sx={btnHover} className={'navFocus'} >
-            <Link to={'/projects'} className='navLink' onClick={()=> setOpenNav(false)} >PROJECTS</Link>
+            <Link to={'/project'} className='navLink' onClick={()=> setOpenNav(false)} >PROJECTS</Link>
           </Box>
           <Box variant='contained' sx={btnHover} className={'navFocus'} >
             <a className='navLink'  href="mailto:harshsaini8285@gmail.com">CONTACT </a>
