@@ -3,13 +3,13 @@ import { Container } from '@mui/material'
 import { Navbar } from './components/Navbar/Navbar'
 import { Home } from './components/Home/Home'
 import { Projects } from './components/Projects/Projects'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 
 function App() { 
 
   return (
     <>
-    <BrowserRouter>
+    <HashRouter>
       <Container maxWidth={'xl'} sx={{marginX: 'auto'}} > 
           <Navbar />
         <Routes>
@@ -17,7 +17,7 @@ function App() {
           <Route path='/project' element={<Projects />} /> 
         </Routes>
       </Container>
-    </BrowserRouter>
+    </HashRouter>
     
     </>
   )
