@@ -9,16 +9,7 @@ import mern from '../../assets/mern.png'
 import project1 from '../../assets/project1.png'
 import project3 from '../../assets/project3.png'
 
-export const Home = () => {
-    const st = (theme)=>({
-        marginY: '1rem', 
-        width: '350px',
-        [theme.breakpoints.up(400)]: {
-            marginX: '1rem',
-            width: '450px',
-            overflow: 'hidden',
-        },
-    })
+export const Home = () => { 
   return (
     <>
         <Box maxWidth={'xl'} component={'div'} sx={{marginTop: '5rem'}}>
@@ -139,13 +130,42 @@ export const Home = () => {
                         justifyContent: 'space-evenly',
                         }
                     })}>
-                        <Box component={'div'} maxWidth={'xl'} sx={st} style={{marginTop: '10rem', marginBottom: '10rem'}} >
+                        <Box component={'div'} maxWidth={'xl'} sx={(theme)=>({
+                            width: '350px',
+                            marginY: '1rem',
+                            [theme.breakpoints.up(400)]: {
+                                marginX: '1rem',
+                                width: '450px',
+                                overflow: 'hidden',
+                                marginTop: '10rem', 
+                                marginBottom: '10rem'
+                            },
+                        })} >
                         <ProjectCard img={""} link={"https://github.com/weaponlions/social-memories.git"} title={"Social Memories"} category={"Social Media"} /> 
                     </Box> 
-                    <Box component={'div'} maxWidth={'xl'} sx={st}>
+                    <Box component={'div'} maxWidth={'xl'} sx={(theme)=>({
+                            width: '350px',
+                            marginY: '1rem',
+                            [theme.breakpoints.up(400)]: {
+                                marginX: '1rem',
+                                width: '450px',
+                                overflow: 'hidden', 
+                                marginBottom: '10rem'
+                            },
+                        })} >
                         <ProjectCard img={""} link={"https://github.com/weaponlions/React-Todo-App.git"} title={"React Todo App"} category={"Notes"} /> 
                     </Box> 
-                    <Box component={'div'} maxWidth={'xl'} sx={st} style={{marginTop: '15rem', marginBottom: '15rem'}}>
+                    <Box component={'div'} maxWidth={'xl'} sx={(theme)=>({
+                            width: '350px',
+                            marginY: '1rem',
+                            [theme.breakpoints.up(400)]: {
+                                marginX: '1rem',
+                                width: '450px',
+                                overflow: 'hidden',
+                                marginTop: '15rem', 
+                                marginBottom: '10rem'
+                            },
+                        })} >
                         <ProjectCard img={project3} link={"https://github.com/weaponlions/newsfetch.git"} title={"News Fetcher"} category={"News Api"} /> 
                     </Box> 
                 </Box>
